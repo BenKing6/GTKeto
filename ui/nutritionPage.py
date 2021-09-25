@@ -7,9 +7,14 @@ from gi.repository import Gtk
 gi.require_version('Handy', '1') 
 from gi.repository import Handy
 
-class nutritionPage(Gtk.VBox):
+food_list = []
+
+class nutritionPage(Gtk.Stack):
     def __init__(self):
         super().__init__()
+
+        self.main_box = Gtk.VBox()
+        self.add(self.main_box)
 
         # Nutrition Limit Counters
         self.carbs_box = Gtk.HBox()
@@ -49,15 +54,15 @@ class nutritionPage(Gtk.VBox):
         for item in self.nutrition_bars:
             item.set_margin_top(5)
             item.set_margin_bottom(5)
-            self.pack_start(item, False, False, 0)
+            self.main_box.pack_start(item, False, False, 0)
 
         # Food list
         self.food_list_label = Gtk.Label("Today's Food:")
         self.food_list_label.set_margin_bottom(5)
-        self.pack_start(self.food_list_label, False, False, 0)
+        self.main_box.pack_start(self.food_list_label, False, False, 0)
         self.food_list = Gtk.ListBox()
         self.food_list.set_hexpand(True)
-        self.pack_start(self.food_list, True, True, 0)
+        self.main_box.pack_start(self.food_list, True, True, 0)
 
         # New food button
         self.new_food_button = Gtk.Button("Add New Food")
@@ -66,5 +71,7 @@ class nutritionPage(Gtk.VBox):
         self.new_food_button.set_margin_left(5)
         self.new_food_button.set_margin_right(5)
         self.new_food_button.set_margin_bottom(5)
-        self.pack_end(self.new_food_button, False, False, 0)
+        self.main_box.pack_end(self.new_food_button, False, False, 0)
 
+        # New Food Button pressed
+        # TODO def getNewFoodObject():

@@ -9,7 +9,7 @@ from gi.repository import Handy
 
 class FoodInputPage(Gtk.VBox):
     def __init__(self):
-        super().__init__()
+        super().__init__(foodObject)
 
         # Food name / title
         self.title_box = Gtk.HBox()
