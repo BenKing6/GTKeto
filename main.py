@@ -1,6 +1,6 @@
 import gi
-from nutritionPage import nutritionPage
-from settingsPage import settingsPage
+from ui.nutritionPage import nutritionPage
+from ui.settingsPage import settingsPage
 
 # GTK 3.0 
 gi.require_version("Gtk", "3.0")
