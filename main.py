@@ -1,8 +1,12 @@
 import gi
 from nutritionPage import nutritionPage
 
+# GTK 3.0 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
+# Libhandy
+gi.require_version('Handy', '1') 
+from gi.repository import Handy
 
 default_height = 600
 default_width = 400
@@ -28,12 +32,10 @@ class MainWindow(Gtk.Window):
         self.stack.add_titled(self.nutrition_page, "nutrition", "Nutrition")
 
         # Bottom button bar
-        self.bottom_bar = Gtk.StackSwitcher(homogeneous=True)
+        self.bottom_bar = Handy.ViewSwitcherBar()
         self.bottom_bar.set_stack(self.stack)
-        self.bottom_bar.set_halign(Gtk.Align.CENTER)
+        self.bottom_bar.set_reveal(True)
         self.bottom_bar.set_valign(Gtk.Align.END)
-        self.bottom_bar.set_margin_top(10)
-        self.bottom_bar.set_margin_bottom(10)
         self.box.add(self.bottom_bar)
 
         # ----- TEST STUFF ------ #
