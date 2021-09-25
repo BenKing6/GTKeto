@@ -34,3 +34,17 @@ class FoodInputPage(Gtk.VBox):
         # self.size_field = Gtk # TODO limited options using some GTK input thingy, load values from FoodObject
         self.pack_start(self.size_box, False, False, 5)
         
+        # Quantity of "Size" eaten
+        self.quantity_box = Gtk.HBox()
+        self.quantity_label = Gtk.Label("Quantity:")
+        self.quantity_box.pack_start(self.quantity_label, False, False, 5)
+        # self.quantity_field = Gtk # TODO limited options, number wheel
+        self.pack_start(self.quantity_box, False, False, 5)
+
+        # Calories per "Size"
+        self.calories_box = Gtk.HBox()
+        self.calories_label = Gtk.Label("Calories:")
+        self.calories_box.pack_start(self.calories_label, False, False, 5)
+        self.calories_field = Gtk.Entry()
+        self.calories_box.pack_end(self.calories_field, True, True, 5)
+        self.pack_start(self.calories_box, False, False, 5)
