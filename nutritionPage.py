@@ -18,6 +18,11 @@ class nutritionPage(Gtk.VBox):
         self.protein_bar.set_show_text(True)
         self.fat_bar.set_show_text(True)
 
+        self.carbs_bar.set_text("Total Carbs (g)")
+        self.calories_bar.set_text("Total Calories (kcal)")
+        self.protein_bar.set_text("Total Protein (g)")
+        self.fat_bar.set_text("Total Fat (g)")
+
         self.add(self.carbs_bar)
         self.add(self.calories_bar)
         self.add(self.protein_bar)

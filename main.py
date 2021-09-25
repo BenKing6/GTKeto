@@ -28,7 +28,7 @@ class MainWindow(Gtk.Window):
         self.stack.add_titled(self.nutrition_page, "nutrition", "Nutrition")
 
         # Bottom button bar
-        self.bottom_bar = Gtk.StackSwitcher()
+        self.bottom_bar = Gtk.StackSwitcher(homogeneous=True)
         self.bottom_bar.set_stack(self.stack)
         self.bottom_bar.set_halign(Gtk.Align.CENTER)
         self.box.add(self.bottom_bar)
