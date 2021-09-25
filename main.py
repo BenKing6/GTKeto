@@ -38,10 +38,10 @@ class MainWindow(Handy.Window):
         self.box.pack_end(self.bottom_bar, False, False, 0)
 
         # ----- TEST STUFF ------ #
-        self.test_label = Gtk.Label("test")
-        self.test_label2 = Gtk.Label("test2")
-        self.stack.add_titled(self.test_label, "test", "test")
-        self.stack.add_titled(self.test_label2, "test2", "test2")
+        self.test_label = Gtk.Label("blank")
+        self.test_label2 = Gtk.Label("blank2")
+        self.stack.add_titled(self.test_label, "blank", "blank")
+        self.stack.add_titled(self.test_label2, "blank2", "blank2")
         # ----------------------------- #
  
 win = MainWindow()
