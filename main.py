@@ -25,7 +25,7 @@ class MainWindow(Handy.Window):
         # Main Stack 
         self.stack = Gtk.Stack()
         self.stack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT_RIGHT)
-        self.box.add(self.stack)
+        self.box.pack_start(self.stack, True, True, 0)
 
         # Add Nutrition Page to Main Stack
         self.nutrition_page = nutritionPage()
@@ -35,8 +35,7 @@ class MainWindow(Handy.Window):
         self.bottom_bar = Handy.ViewSwitcherBar()
         self.bottom_bar.set_stack(self.stack)
         self.bottom_bar.set_reveal(True)
-        self.bottom_bar.set_valign(Gtk.Align.END)
-        self.box.add(self.bottom_bar)
+        self.box.pack_end(self.bottom_bar, False, False, 0)
 
         # ----- TEST STUFF ------ #
         self.test_label = Gtk.Label("test")
