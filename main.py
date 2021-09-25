@@ -11,13 +11,13 @@ from gi.repository import Handy
 default_height = 600
 default_width = 400
 
-class MainWindow(Gtk.Window):
+class MainWindow(Handy.Window):
     def __init__(self):
         super().__init__(title="GTKeto")
 
         # window stuff
         self.set_default_size(default_width, default_height)
-        
+
         # Main box
         self.box = Gtk.VBox()
         self.add(self.box)
@@ -41,8 +41,8 @@ class MainWindow(Gtk.Window):
         # ----- TEST STUFF ------ #
         self.test_label = Gtk.Label("test")
         self.test_label2 = Gtk.Label("test2")
-        self.stack.add(self.test_label)
-        self.stack.add(self.test_label2)
+        self.stack.add_titled(self.test_label, "test", "test")
+        self.stack.add_titled(self.test_label2, "test2", "test2")
         # ----------------------------- #
  
 win = MainWindow()
