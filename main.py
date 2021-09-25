@@ -9,7 +9,7 @@ default_width = 400
 
 class MainWindow(Gtk.Window):
     def __init__(self):
-        super().__init__(title="DietApp")
+        super().__init__(title="GTKeto")
 
         # window stuff
         self.set_default_size(default_width, default_height)
@@ -31,6 +31,9 @@ class MainWindow(Gtk.Window):
         self.bottom_bar = Gtk.StackSwitcher(homogeneous=True)
         self.bottom_bar.set_stack(self.stack)
         self.bottom_bar.set_halign(Gtk.Align.CENTER)
+        self.bottom_bar.set_valign(Gtk.Align.END)
+        self.bottom_bar.set_margin_top(10)
+        self.bottom_bar.set_margin_bottom(10)
         self.box.add(self.bottom_bar)
 
         # ----- TEST STUFF ------ #
