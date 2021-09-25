@@ -1,5 +1,6 @@
 import gi
 from nutritionPage import nutritionPage
+from settingsPage import settingsPage
 
 # GTK 3.0 
 gi.require_version("Gtk", "3.0")
@@ -27,7 +28,7 @@ class MainWindow(Handy.Window):
         self.stack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT_RIGHT)
         self.box.pack_start(self.stack, True, True, 0)
 
-        # Add Nutrition Page to Main Stack
+        # Add nutrition page to Main Stack
         self.nutrition_page = nutritionPage()
         self.stack.add_titled(self.nutrition_page, "nutrition", "Nutrition")
 
@@ -39,10 +40,12 @@ class MainWindow(Handy.Window):
 
         # ----- TEST STUFF ------ #
         self.test_label = Gtk.Label("blank")
-        self.test_label2 = Gtk.Label("blank2")
         self.stack.add_titled(self.test_label, "blank", "blank")
-        self.stack.add_titled(self.test_label2, "blank2", "blank2")
         # ----------------------------- #
+
+        # Add settings page to Main Stack
+        self.settings_page = settingsPage()
+        self.stack.add_titled(self.settings_page, "settings", "Settings")
  
 win = MainWindow()
 win.connect("destroy", Gtk.main_quit)
