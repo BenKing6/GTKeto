@@ -6,7 +6,7 @@ from gi.repository import Gtk
 class nutritionPage(Gtk.VBox):
     def __init__(self):
         super().__init__()
-        
+
         self.set_valign(Gtk.Align.START)
 
         # Nutrition Limit Counters
@@ -24,8 +24,25 @@ class nutritionPage(Gtk.VBox):
         for bar in self.nutrition_bars:
             bar.set_show_text(True)
             bar.set_margin_top(5)
+            bar.set_margin_left(5)
+            bar.set_margin_right(5)
             bar.set_margin_bottom(5)
             self.add(bar)
 
+        # Food list
+        self.food_list_label = Gtk.Label("Today's Food:")
+        self.food_list_label.set_margin_bottom(5)
+        self.add(self.food_list_label)
+        self.food_list = Gtk.ListBox()
+        self.food_list.set_hexpand(True)
+        self.add(self.food_list)
 
+        # New food button
+        self.new_food_button = Gtk.Button("Add New Food")
+        self.new_food_button.set_valign(Gtk.Align.END)
+        self.new_food_button.set_margin_top(5)
+        self.new_food_button.set_margin_left(5)
+        self.new_food_button.set_margin_right(5)
+        self.new_food_button.set_margin_bottom(5)
+        self.add(self.new_food_button)
 
