@@ -1,4 +1,6 @@
 import gi
+from ui.foodInputPage import FoodInputPage
+
 
 # GTK 3.0 
 gi.require_version("Gtk", "3.0")
@@ -66,6 +68,7 @@ class nutritionPage(Gtk.Stack):
 
         # New food button
         self.new_food_button = Gtk.Button("Add New Food")
+        self.new_food_button.connect("clicked", self.add_new_food)
         self.new_food_button.set_valign(Gtk.Align.END)
         self.new_food_button.set_margin_top(5)
         self.new_food_button.set_margin_left(5)
@@ -73,5 +76,8 @@ class nutritionPage(Gtk.Stack):
         self.new_food_button.set_margin_bottom(5)
         self.main_box.pack_end(self.new_food_button, False, False, 0)
 
-        # New Food Button pressed
-        # TODO def getNewFoodObject():
+    # New Food Button pressed
+    def add_new_food(self, button):
+        food_page = FoodInputPage()
+        self.remove(self.main_box)
+        self.add(food_page)

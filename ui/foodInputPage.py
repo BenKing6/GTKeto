@@ -9,7 +9,7 @@ from gi.repository import Handy
 
 class FoodInputPage(Gtk.VBox):
     def __init__(self):
-        super().__init__(foodObject)
+        super().__init__()
 
         # Food name / title
         self.title_box = Gtk.HBox()
@@ -48,3 +48,6 @@ class FoodInputPage(Gtk.VBox):
         self.calories_field = Gtk.Entry()
         self.calories_box.pack_end(self.calories_field, True, True, 5)
         self.pack_start(self.calories_box, False, False, 5)
+
+    def get_box(self):
+        return self
