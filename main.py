@@ -1,6 +1,6 @@
 import gi
-from ui.nutritionPage import nutritionPage
-from ui.settingsPage import settingsPage
+from ui.nutritionPage import NutritionPage
+from ui.settingsPage import SettingsPage
 
 # GTK 3.0 
 gi.require_version("Gtk", "3.0")
@@ -29,7 +29,7 @@ class MainWindow(Handy.Window):
         self.box.pack_start(self.stack, True, True, 0)
 
         # Add nutrition page to Main Stack
-        self.nutrition_page = nutritionPage()
+        self.nutrition_page = NutritionPage()
         self.stack.add_titled(self.nutrition_page, "nutrition", "Nutrition")
 
         # Bottom button bar
@@ -44,7 +44,7 @@ class MainWindow(Handy.Window):
         # ----------------------------- #
 
         # Add settings page to Main Stack
-        self.settings_page = settingsPage()
+        self.settings_page = SettingsPage()
         self.stack.add_titled(self.settings_page, "settings", "Settings")
  
 win = MainWindow()

@@ -11,7 +11,7 @@ from gi.repository import Handy
 
 food_list = []
 
-class nutritionPage(Gtk.Stack):
+class NutritionPage(Gtk.Stack):
     def __init__(self):
         super().__init__()
 
