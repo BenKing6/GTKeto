@@ -16,7 +16,9 @@ class NutritionPage(Gtk.Stack):
         super().__init__()
 
         self.main_box = Gtk.VBox()
+        self.food_input_box = FoodInputPage()
         self.add(self.main_box)
+        self.add(self.food_input_box)
 
         # Nutrition Limit Counters
         self.carbs_box = Gtk.HBox()
@@ -68,7 +70,7 @@ class NutritionPage(Gtk.Stack):
 
         # New food button
         self.new_food_button = Gtk.Button("Add New Food")
-        self.new_food_button.connect("clicked", self.add_new_food)
+        self.new_food_button.connect("clicked", self.new_food_pressed)
         self.new_food_button.set_valign(Gtk.Align.END)
         self.new_food_button.set_margin_top(5)
         self.new_food_button.set_margin_left(5)
@@ -77,7 +79,6 @@ class NutritionPage(Gtk.Stack):
         self.main_box.pack_end(self.new_food_button, False, False, 0)
 
     # New Food Button pressed
-    def add_new_food(self, button):
-        food_page = FoodInputPage()
-        self.remove(self.main_box)
-        self.add(food_page)
+    def new_food_pressed(self, button):
+        self.food_input_box.clear_all()
+        self.set_visible_child(self.food_input_box)
