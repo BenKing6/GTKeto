@@ -48,6 +48,3 @@ class FoodInputPage(Gtk.VBox):
         self.calories_field = Gtk.Entry()
         self.calories_box.pack_end(self.calories_field, True, True, 5)
         self.pack_start(self.calories_box, False, False, 5)
-
-    def get_box(self):
-        return self
